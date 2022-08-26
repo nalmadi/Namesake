@@ -30,7 +30,7 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 
 
 <p align="center">
-  <img width="400" height="350" src="/documentation/imgs/real_phono.drawio.png">
+  <img width="400" height="330" src="/documentation/imgs/real_phono.drawio.png">
 </p>
 
 
@@ -40,7 +40,6 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 <p align="center">
   <img width="400" height="350" src="/documentation/imgs/semantic.drawio.png">
 </p>
-
 
 
 
@@ -62,13 +61,11 @@ python namesake.py test1.py
 <p align="center">
   <img width="800" src="/documentation/imgs/demo-Namesake.png">
 </p>
-![Namesake Example](/documentation/imgs/demo-Namesake.png)
 
 ## 📝 Citation:
 [Naser Al Madi. 2022. Namesake: A Checker of Lexical Similarity in Identifier
 Names. In Proceedings of The 37th IEEE/ACM International Conference on
 Automated Software Engineering Workshops (ASEW 2022).](https://www.researchgate.net/publication/362932462_How_Readable_is_Model-generated_Code_Examining_Readability_and_Visual_Inspection_of_GitHub_Copilot)
-
 
 ## ⚖️ License:
 
