@@ -1,6 +1,6 @@
 # Namesake
 ![GitHub](https://img.shields.io/github/license/nalmadi/Namesake?style=for-the-badge)
-[![GitHub contributors](https://img.shields.io/github/contributors-anon/nalmadi/Namesake)](https://img.shields.io/github/contributors-anon/nalmadi/Namesake?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors-anon/nalmadi/Namesake?style=for-the-badge)
 
 ## _A Checker of Lexical Similarity in Identifier Names_
 
