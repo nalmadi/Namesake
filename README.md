@@ -29,13 +29,17 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 **Phonological similarity** describes two words that share a similar or identical pronunciation, also known as homophones:
 
 
-![Orthographic similarity](/documentation/imgs/real_phono.drawio.png)
+<p align="center">
+  <img width="400" height="360" src="/documentation/imgs/real_phono.drawio.png">
+</p>
 
 
 **Semantic similarity** describes words that share a meaning (synonyms):
 
 
-![Semantic similarity](/documentation/imgs/semantic.drawio.png)
+<p align="center">
+  <img width="400" height="360" src="/documentation/imgs/semantic.drawio.png">
+</p>
 
 
 
