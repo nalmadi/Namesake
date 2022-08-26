@@ -30,7 +30,7 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 
 
 <p align="center">
-  <img width="400" height="360" src="/documentation/imgs/real_phono.drawio.png">
+  <img width="400" height="350" src="/documentation/imgs/real_phono.drawio.png">
 </p>
 
 
@@ -38,7 +38,7 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 
 
 <p align="center">
-  <img width="400" height="360" src="/documentation/imgs/semantic.drawio.png">
+  <img width="400" height="350" src="/documentation/imgs/semantic.drawio.png">
 </p>
 
 
@@ -59,6 +59,9 @@ python namesake.py test1.py
 ```
 
 ## 👀 Example Running Namesake:
+<p align="center">
+  <img width="800" src="/documentation/imgs/demo-Namesake.png">
+</p>
 ![Namesake Example](/documentation/imgs/demo-Namesake.png)
 
 ## 📝 Citation:
