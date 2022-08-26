@@ -19,11 +19,11 @@ Orthographic similarity focuses on the the similarity in word form on the level 
 
 
 Phonological similarity describes two words that share a similar or identical pronunciation, also known as homophones:
-![Orthographic similarity](/documentation/imgs/ortho_example.drawio.png)
+![Orthographic similarity](/documentation/imgs/real_phono.drawio.png)
 
 
-Orthographic similarity focuses on the the similarity in word form on the level of letters.
-![Orthographic similarity](/documentation/imgs/ortho_example.drawio.png)
+Semantically similar words that share a meaning are described as synonyms:
+![Semantic similarity](/documentation/imgs/semantic.drawio.png)
 
 
 ## ⚙️ Installing Namesake:
