@@ -1,11 +1,10 @@
 # Namesake
+## _A Checker of Lexical Similarity in Identifier Names_
 ![GitHub top language](https://img.shields.io/github/languages/top/nalmadi/Namesake?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nalmadi/Namesake?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/nalmadi/Namesake?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/nalmadi/Namesake?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/nalmadi/Namesake?style=for-the-badge)
-
-## _A Checker of Lexical Similarity in Identifier Names_
 
 Namesake is an open-source tool for assessing confusing naming combinations in Python programs.
 Namesake flags confusing identifier naming combinations that are similar in:
