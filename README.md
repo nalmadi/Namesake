@@ -15,20 +15,22 @@ Namesake flags confusing identifier naming combinations that are similar in:
 * or semantics (meaning).
 
 ## 💡 What is Lexical Similarity in Code?
+Lexical access describes the retrieval of word shape (orthography), pronunciation (phonology), and meaning (semantics) from memory during reading for comprehension. 
 
-Orthographic similarity focuses on the the similarity in word form on the level of letters. Not to be confused by editing distance or Levenshtein's distance, where one letter is replaced by another, orthographic similarity focuses on the similarities between letters shapes.  A good example is the confusion between `O' and `C' as individual letters or within words and sentences. Here's a common exmple in code:
+
+**Orthographic similarity** focuses on the the similarity in word form on the level of letters. Not to be confused by editing distance or Levenshtein's distance, where one letter is replaced by another, orthographic similarity focuses on the similarities between letters shapes.  A good example is the confusion between `O' and `C' as individual letters or within words and sentences. Here's a common exmple in code:
 
 
 ![Orthographic similarity](/documentation/imgs/ortho_example.drawio.png)
 
 
-Phonological similarity describes two words that share a similar or identical pronunciation, also known as homophones:
+**Phonological similarity** describes two words that share a similar or identical pronunciation, also known as homophones:
 
 
 ![Orthographic similarity](/documentation/imgs/real_phono.drawio.png)
 
 
-Semantically similar words that share a meaning are described as synonyms:
+**Semantic similarity** describes words that share a meaning (synonyms):
 
 
 ![Semantic similarity](/documentation/imgs/semantic.drawio.png)
