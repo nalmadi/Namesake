@@ -30,7 +30,7 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 
 
 <p align="center">
-  <img width="400" height="310" src="/documentation/imgs/real_phono.drawio.png">
+  <img width="400" height="290" src="/documentation/imgs/real_phono.drawio.png">
 </p>
 
 
