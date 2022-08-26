@@ -1,7 +1,7 @@
 # Namesake
-## _A Checker of Lexical Similarity in Identifier Names_
-
 ![GitHub](https://img.shields.io/github/license/nalmadi/Namesake?style=for-the-badge)
+
+## _A Checker of Lexical Similarity in Identifier Names_
 
 Namesake is an open-source tool for assessing confusing naming combinations in Python programs.
 Namesake flags confusing identifier naming combinations that are similar in:
