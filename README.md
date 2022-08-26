@@ -22,6 +22,9 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 
 
 ![Orthographic similarity](/documentation/imgs/ortho_example.drawio.png)
+<p align="center">
+  <img width="460" height="300" src="/documentation/imgs/ortho_example.drawio.png">
+</p>
 
 
 **Phonological similarity** describes two words that share a similar or identical pronunciation, also known as homophones:
