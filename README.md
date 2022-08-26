@@ -4,7 +4,6 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nalmadi/Namesake?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/nalmadi/Namesake?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/nalmadi/Namesake?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors-anon/nalmadi/Namesake?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nalmadi/Namesake?style=for-the-badge)
 
 Namesake is an open-source tool for assessing confusing naming combinations in Python programs.
