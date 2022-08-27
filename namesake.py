@@ -211,9 +211,11 @@ def print_orthographic_warnings(orthographic_similarity, identifiers_lines, thre
 
     count = 0
 
+    print("\northographic similarity:")
+
     for item in orthographic_similarity:
         if item[0] > threshold:
-            print("Warning - orthographic similarity: [{}] on line {} and [{}] on line {} are {:.2f} similar!"
+            print("\t[{}] on line {} and [{}] on line {} are {:.2f} similar!"
             .format(item[1], 
             get_identifier_line(item[1], identifiers_lines), 
             item[2], 
@@ -228,9 +230,11 @@ def print_phonological_warnings(phonological_similarity, identifiers_lines, thre
 
     count = 0
 
+    print("\nphonological similarity:")
+
     for item in phonological_similarity:
         if item[0] > threshold:
-            print("Warning - phonological similarity: [{}] on line {} and [{}] on line {} are {:.2f} similar!"
+            print("\t[{}] on line {} and [{}] on line {} are {:.2f} similar!"
             .format(item[1], 
             get_identifier_line(item[1], identifiers_lines), 
             item[2], 
@@ -246,6 +250,8 @@ def print_semantic_warnings(semantic_similarity, identifiers_lines, threshold):
 
     count = 0
 
+    print("\nsemantic similarity:")
+
     for item in semantic_similarity:
         if item[0] > threshold:
 
@@ -257,7 +263,7 @@ def print_semantic_warnings(semantic_similarity, identifiers_lines, threshold):
             if isinstance(item[2], list):
                 name2 = "_".join(item[2])
 
-            print("Warning - semantic similarity: [{}] on line {} and [{}] on line {} are {:.2f} similar!"
+            print("\t[{}] on line {} and [{}] on line {} are {:.2f} similar!"
             .format(name1, 
             get_identifier_line(name1, identifiers_lines), 
             name2, 
