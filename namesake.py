@@ -1,3 +1,14 @@
+'''
+Project Namesake: a Python tool for detecting lexical similarity in identifier names
+
+Author: Naser Al Madi (nsalmadi@colby.edu)
+Last Modified: August 26, 2022 
+
+Paper Citation: 
+Naser Al Madi. 2022. Namesake: A Checker of Lexical Similarity in Identifier Names. 
+In Proceedings of The 37th IEEE/ACM International Conference on Automated Software 
+Engineering Workshops (ASEW 2022).
+'''
 
 import sys
 import ast
