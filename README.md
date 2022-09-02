@@ -64,7 +64,7 @@ python namesake.py test1.py
 ## 📝 Citation:
 [Naser Al Madi. 2022. Namesake: A Checker of Lexical Similarity in Identifier
 Names. In Proceedings of The 37th IEEE/ACM International Conference on
-Automated Software Engineering Workshops (ASEW 2022).](https://www.researchgate.net/publication/362932462_How_Readable_is_Model-generated_Code_Examining_Readability_and_Visual_Inspection_of_GitHub_Copilot)
+Automated Software Engineering Workshops (ASEW 2022).](https://www.researchgate.net/publication/363207604_Namesake_A_Checker_of_Lexical_Similarity_in_Identifier_Names)
 
 ## ⚖️ License:
 
