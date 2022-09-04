@@ -68,4 +68,4 @@ Automated Software Engineering Workshops (ASEW 2022).](https://www.researchgate.
 
 ## ⚖️ License:
 
- **MIT Free Software, Hell Yeah!**
+ **MIT (Free Software, Hell Yeah!)**
