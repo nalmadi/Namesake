@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/nalmadi/Namesake?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nalmadi/Namesake?style=for-the-badge)
 
-# ⚠️ Namesake
+# ⚠️ Namesake 
 ## _A Checker of Lexical Similarity in Identifier Names_
 
 
