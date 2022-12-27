@@ -33,21 +33,11 @@ def shift_and_count(x_shift, y_shift, M, R):
         moving one matrix up is equivalent to
         moving the other matrix down
     """
-    # left_shift_count, right_shift_count = 0, 0
-    # for r_row, m_row in enumerate(range(y_shift, height)):
-    #     for r_col, m_col in enumerate(range(x_shift, width)):
-    #         if M.getpixel((m_row, m_col)) < 255 and M.getpixel((m_row, m_col)) == R.getpixel((r_row, r_col)):
-    #             left_shift_count += 1
-    #         if M.getpixel((m_row, r_col)) < 255  and M.getpixel((m_row, r_col)) == R.getpixel((r_row, m_col)):
-    #             right_shift_count += 1
-
-    # return max(left_shift_count, right_shift_count)
-
     count = 0
 
     width = M.size[0]
     height = M.size[1]
-
+       
     for row in range(height):
         for col in range(width):
             if  0 <= row + y_shift < height and 0 <= col + x_shift < width:
@@ -112,7 +102,7 @@ lexicon = {}
 
 def main():
 
-    path = "./Consolas_split/"
+    path = "font_data/Consolas_split/"
     
     # get all images in path
     images = []

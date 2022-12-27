@@ -31,19 +31,18 @@ def get_orthographic_similarity(name1, name2, lexicon):
     shorter_name = min(len(name1), len(name2))
     longer_name = max(len(name1), len(name2))
 
-    for i in range(shorter_name):
-
-        if name1[i] == name2[i]:
+    for char1, char2 in zip(name1, name2):
+        if char1 == char2:
             sum_similarity += 1
-        elif lexicon.get(name1[i] + name2[i], -1) != -1:
-            sum_similarity += lexicon[name1[i] + name2[i]]
+        elif lexicon.get(char1 + char2, -1) != -1:
+            sum_similarity += lexicon[char1 + char2]
 
     return ((sum_similarity - (longer_name - shorter_name)) / shorter_name) / longer_name
 
 
 def get_all_orthographic_similarities(identifiers, lexicon):
     ''' compare orthographic similarity of all identifiers '''
-
+    
     orthographic_similarity = []
     
     for i in range(len(identifiers)):
@@ -275,7 +274,20 @@ def print_semantic_warnings(semantic_similarity, identifiers_lines, threshold):
 
 
 def main():
+    #default thresholds
+    orthographic_threshold = 0.45
+    phonological_threshold = 0.8
+    semantic_threshold = 0.9
+    
     # check if the number of arguments is correct
+    if len(5 > sys.argv > 2):
+        orthographic_threshold = sys.argv[2]
+        phonological_threshold = sys.argv[3]
+        semantic_threshold = sys.argv[4]
+    else:
+        print("Usage: python3 {} <target_file> <optional_orthographic_threshold> <optional_phonological_threshold> <optional_semantic_threshold>".format(sys.argv[0]))
+        sys.exit(1)
+        
     if len(sys.argv) != 2:
         print("Usage: python3 {} <target_file>".format(sys.argv[0]))
         sys.exit(1)
@@ -329,9 +341,9 @@ def main():
 
     # if any similarity is greater than threshold, print warning message
     print()
-    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.45)
-    phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, 0.8)
-    semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, 0.9)
+    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, orthographic_threshold)
+    phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, phonological_threshold)
+    semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, semantic_threshold)
     
     print("\nProcessing", 
         len(identifiers_lines), 
