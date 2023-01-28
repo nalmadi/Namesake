@@ -51,35 +51,14 @@ def shift_and_count(x_shift, y_shift, M, R):
 def get_congruence(letter1, letter2):
 
     start_time = time.time()
-
+    
+    #processing image
     img1 = Image.open(letter1)
     img2 = Image.open(letter2)
-
     img1 = ImageOps.grayscale(img1)
     img2 = ImageOps.grayscale(img2)
-
-    width = img1.size[0]
-    height = img1.size[1]
-
-    max_overlaps = 0
-    # move one of the matrice up and left and vice versa.
-    # (equivalent to move the other matrix down and right)
-    for y_shift in range(-height, height):
-        for x_shift in range(-width, width):
-            # move the matrix A to the up-right and up-left directions
-            max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img1, img2))
-            # move the matrix B to the up-right and up-left directions
-            #  which is equivalent to moving A to the down-right and down-left directions 
-            #max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img2, img1))
-
-    print("max_overlap: ",max_overlaps)
-    print("area of: " , letter1, " is: ", get_area(img1))
-    print("area of: ", letter2, " is: ", get_area(img2))
-    #print("congruence: ", max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps)/2)
-    print("congruence: ", math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 ))
     
-    congruence = math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 )
-    
+    #get letter names
     letter1_name = letter1.split("/")[-1].split(".")[0]
     letter2_name = letter2.split("/")[-1].split(".")[0]
 
@@ -89,14 +68,43 @@ def get_congruence(letter1, letter2):
     if letter2_name != "1":
         letter2_name = letter2_name.replace("1", "")
 
-    #lexicon[letter1_name+letter2_name] = congruence
-    return (letter1_name + letter2_name, congruence)
+    congruences = []
+    
+    #image rotation
+    for i in range(0, 360, 90):
+        width = img1.size[0]
+        height = img1.size[1]
 
-    end_time = time.time()
-    print("time: ", end_time - start_time)
-    print(lexicon)
-    #return math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 )
+        max_overlaps = 0
+        # move one of the matrice up and left and vice versa.
+        # (equivalent to move the other matrix down and right)
+        for y_shift in range(-height, height):
+            for x_shift in range(-width, width):
+                # move the matrix A to the up-right and up-left directions
+                max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img1, img2))
+                # move the matrix B to the up-right and up-left directions
+                #  which is equivalent to moving A to the down-right and down-left directions 
+                #max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img2, img1))
 
+        curr_congruence = math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 )
+        
+        # print("current_angle: ", i)
+        # print("max_overlap: ",max_overlaps)
+        # print("area of: " , letter1_name, " is: ", get_area(img1))
+        # print("area of: ", letter2_name, " is: ", get_area(img2))
+        # print("congruence: ", curr_congruence, "\n")
+        
+        congruences.append(curr_congruence)
+        img1 = img1.rotate(90)
+
+    #need to find better method for calculating final congruence
+    #current method assume the simmilarity value at 4 angles has the same effect on letter recognition
+    #in reality, simmilarity at 0 degree plays bigger role than other angles
+    final_congruence = sum(congruences)/4
+
+    print(f"--> Finished procession congruence for {letter1_name} and {letter2_name} in {time.time() - start_time}")
+    print(f"--> AVARAGE CONGRUENCY BETWEEN 4 ANGLES: {final_congruence}\n")
+    return (letter1_name + letter2_name, final_congruence)
 
 lexicon = {}
 
