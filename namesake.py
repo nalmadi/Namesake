@@ -308,7 +308,7 @@ def main():
 
     lexicon = {}
     # set up a dictionary to store the orthographic similarity
-    with open('letter_lexicon.pickle', 'rb') as handle:
+    with open('letter_lexicon_with_rotation.pickle', 'rb') as handle:
         lexicon = pickle.load(handle)
 
     # set up Python2vec model
@@ -329,7 +329,7 @@ def main():
 
     # if any similarity is greater than threshold, print warning message
     print()
-    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.45)
+    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.3)
     phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, 0.8)
     semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, 0.9)
     
