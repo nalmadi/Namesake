@@ -329,7 +329,7 @@ def main():
 
     # if any similarity is greater than threshold, print warning message
     print()
-    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.3)
+    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.45)
     phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, 0.8)
     semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, 0.9)
     

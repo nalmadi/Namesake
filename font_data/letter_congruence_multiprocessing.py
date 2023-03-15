@@ -93,7 +93,7 @@ def get_congruence(letter1, letter2):
         # rotate img by 90 degrees
         img1 = img1.rotate(90)
     
-    final_congruence = sum(congruences)/4
+    final_congruence = max(congruences)
     
     letter1_name = letter1.split("/")[-1].split(".")[0]
     letter2_name = letter2.split("/")[-1].split(".")[0]
