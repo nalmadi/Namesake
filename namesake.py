@@ -283,6 +283,7 @@ def main():
     # open a file passed by the command line
     file = open(sys.argv[1])
     code = file.read()
+    file.close()
 
     # get the abstract syntax tree of the file
     ast_tree = ast.parse(code)
