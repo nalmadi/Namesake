@@ -291,6 +291,7 @@ def main():
             phon_threshold = float(sys.argv[3])
             sem_threshold = float(sys.argv[4])
 
+            # verify that the provided thresholds are between 0 and 1
             for threshold in (orth_threshold, phon_threshold, sem_threshold):
                 if not (threshold > 0 and threshold < 1):
                     print("Aborted: Optional thresholds must be between 0 and 1")
@@ -331,7 +332,7 @@ def main():
     # set up Python2vec model
     df = pd.read_json('blog_model.json')
 
-    # transposting the dataframe
+    # transposing the dataframe
     x = df.T.values
     y = df.columns.tolist()
 
