@@ -50,17 +50,14 @@ pip install -r /namesake/requirements.txt
 ```
 
 ## 🚀 Running Namesake:
-To run Namesake on the file test1.py with default similarity thresholds:
+To run Namesake on the file test1.py:
 
 ```sh
-python namesake.py test1.py
+python namesake.py test1.py [orth_threshold] [phon_threshold] [sem_threshold]
 ```
 
-To run Namesake on the file test1.py with custom similarity thresholds `(0.5, 0.6 0.7)`:
+Threshold values must be between 0 and 1.
 
-```sh
-python namesake.py test1.py 0.5 0.6 0.7
-```
 
 ## 👀 Example Running Namesake:
 <p align="center">
