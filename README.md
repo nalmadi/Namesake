@@ -50,11 +50,14 @@ pip install -r /namesake/requirements.txt
 ```
 
 ## 🚀 Running Namesake:
-To run Namesake on the file test1.py
+To run Namesake on the file test1.py:
 
 ```sh
-python namesake.py test1.py
+python namesake.py test1.py [orth_threshold] [phon_threshold] [sem_threshold]
 ```
+
+Threshold values must be between 0 and 1.
+
 
 ## 👀 Example Running Namesake:
 <p align="center">

@@ -275,14 +275,32 @@ def print_semantic_warnings(semantic_similarity, identifiers_lines, threshold):
 
 
 def main():
-    # check if the number of arguments is correct
-    if len(sys.argv) != 2:
-        print("Usage: python3 {} <target_file>".format(sys.argv[0]))
+    # if the number of arguments is not correct
+    if len(sys.argv) != 2 and len(sys.argv) != 5:
+        print("Usage: python3 {} <target_file> [orth_threshold] [phon_threshold] [sem_threshold]".format(sys.argv[0]))
         sys.exit(1)
+    else:
+        # if only filename is provided
+        if len(sys.argv) == 2:
+            orth_threshold = 0.45
+            phon_threshold = 0.8
+            sem_threshold = 0.9
+        # if filename and threshold parameters are provided
+        else:
+            orth_threshold = float(sys.argv[2])
+            phon_threshold = float(sys.argv[3])
+            sem_threshold = float(sys.argv[4])
+
+            # verify that the provided thresholds are between 0 and 1
+            for threshold in (orth_threshold, phon_threshold, sem_threshold):
+                if not (threshold > 0 and threshold < 1):
+                    print("Aborted: Optional thresholds must be between 0 and 1")
+                    sys.exit(1)
 
     # open a file passed by the command line
     file = open(sys.argv[1])
     code = file.read()
+    file.close()
 
     # get the abstract syntax tree of the file
     ast_tree = ast.parse(code)
@@ -314,7 +332,7 @@ def main():
     # set up Python2vec model
     df = pd.read_json('blog_model.json')
 
-    # transposting the dataframe
+    # transposing the dataframe
     x = df.T.values
     y = df.columns.tolist()
 
@@ -329,9 +347,9 @@ def main():
 
     # if any similarity is greater than threshold, print warning message
     print()
-    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, 0.45)
-    phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, 0.8)
-    semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, 0.9)
+    orthographic_count = print_orthographic_warnings(orthographic_similarity, identifiers_lines, orth_threshold)
+    phonological_count = print_phonological_warnings(phonological_similarity, identifiers_lines, phon_threshold)
+    semantic_count = print_semantic_warnings(semantic_similarity, identifiers_lines, sem_threshold)
     
     print("\nProcessing", 
         len(identifiers_lines), 
