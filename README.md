@@ -50,7 +50,7 @@ pip install -r /namesake/requirements.txt
 ```
 
 ## 🚀 Running Namesake:
-To run Namesake on the file test1.py:
+To run Namesake on the file test1.py (with default similarity thresholds):
 
 ```sh
 python namesake.py test1.py [orth_threshold] [phon_threshold] [sem_threshold]
