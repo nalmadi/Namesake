@@ -106,7 +106,7 @@ def get_congruence(letter1, letter2):
 
     #lexicon[letter1_name+letter2_name] = congruence
     print(f"--> Finished procession congruence for {letter1_name} and {letter2_name} in {time.time() - start_time}")
-    print(f"--> AVARAGE CONGRUENCY BETWEEN 4 ANGLES: {final_congruence}\n")
+    print(f"--> MAX CONGRUENCY VALUE ACROSS ALL 4 ORIENTATIONS: {final_congruence}\n")
     return (letter1_name + letter2_name, final_congruence)
 
     end_time = time.time()
