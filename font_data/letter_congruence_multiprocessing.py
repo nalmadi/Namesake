@@ -62,33 +62,38 @@ def get_congruence(letter1, letter2):
 
     start_time = time.time()
 
+    # processing image
     img1 = Image.open(letter1)
     img2 = Image.open(letter2)
 
     img1 = ImageOps.grayscale(img1)
     img2 = ImageOps.grayscale(img2)
 
-    width = img1.size[0]
-    height = img1.size[1]
+    congruences = []
 
-    max_overlaps = 0
-    # move one of the matrice up and left and vice versa.
-    # (equivalent to move the other matrix down and right)
-    for y_shift in range(-height, height):
-        for x_shift in range(-width, width):
-            # move the matrix A to the up-right and up-left directions
-            max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img1, img2))
-            # move the matrix B to the up-right and up-left directions
-            #  which is equivalent to moving A to the down-right and down-left directions 
-            #max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img2, img1))
+    # implementing rotation
+    for a in range(0, 360, 90):
+        width = img1.size[0]
+        height = img1.size[1]
+        
+        max_overlaps = 0
+        # move one of the matrice up and left and vice versa.
+        # (equivalent to move the other matrix down and right)
+        for y_shift in range(-height, height):
+            for x_shift in range(-width, width):
+                # move the matrix A to the up-right and up-left directions
+                max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img1, img2))
+                # move the matrix B to the up-right and up-left directions
+                #  which is equivalent to moving A to the down-right and down-left directions 
+                #max_overlaps = max(max_overlaps, shift_and_count(x_shift, y_shift, img2, img1))
 
-    print("max_overlap: ",max_overlaps)
-    print("area of: " , letter1, " is: ", get_area(img1))
-    print("area of: ", letter2, " is: ", get_area(img2))
-    #print("congruence: ", max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps)/2)
-    print("congruence: ", math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 ))
+        curr_congruence = math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 )
+        congruences.append(curr_congruence)
+        
+        # rotate img by 90 degrees
+        img1 = img1.rotate(90)
     
-    congruence = math.log10(10 * max_overlaps / (get_area(img1) + get_area(img2) - 2 * max_overlaps) / 2 )
+    final_congruence = max(congruences)
     
     letter1_name = letter1.split("/")[-1].split(".")[0]
     letter2_name = letter2.split("/")[-1].split(".")[0]
@@ -100,7 +105,9 @@ def get_congruence(letter1, letter2):
         letter2_name = letter2_name.replace("1", "")
 
     #lexicon[letter1_name+letter2_name] = congruence
-    return (letter1_name + letter2_name, congruence)
+    print(f"--> Finished procession congruence for {letter1_name} and {letter2_name} in {time.time() - start_time}")
+    print(f"--> MAX CONGRUENCY VALUE ACROSS ALL 4 ORIENTATIONS: {final_congruence}\n")
+    return (letter1_name + letter2_name, final_congruence)
 
     end_time = time.time()
     print("time: ", end_time - start_time)
@@ -112,7 +119,7 @@ lexicon = {}
 
 def main():
 
-    path = "./Consolas_split/"
+    path = "./font_data/Consolas_split/"
     
     # get all images in path
     images = []
@@ -142,10 +149,10 @@ def main():
         lexicon[second_letter + first_letter] = item
         lexicon[key] = item
 
-    with open('letter_lexicon.pickle', 'wb') as handle:
+    with open('letter_lexicon_with_rotation.pickle', 'wb') as handle:
         pickle.dump(lexicon, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-    with open('letter_lexicon.pickle', 'rb') as handle:
+    with open('letter_lexicon_with_rotation.pickle', 'rb') as handle:
         copy_lexicon = pickle.load(handle)
 
     print(copy_lexicon == lexicon)

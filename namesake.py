@@ -326,7 +326,7 @@ def main():
 
     lexicon = {}
     # set up a dictionary to store the orthographic similarity
-    with open('letter_lexicon.pickle', 'rb') as handle:
+    with open('letter_lexicon_with_rotation.pickle', 'rb') as handle:
         lexicon = pickle.load(handle)
 
     # set up Python2vec model
