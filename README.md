@@ -46,7 +46,7 @@ Lexical access describes the retrieval of word shape (orthography), pronunciatio
 first, to install the requirements:
 
 ```sh
-pip install -r /namesake/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 🚀 Running Namesake:
