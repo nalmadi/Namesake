@@ -11,7 +11,7 @@ Namesake is an open-source tool for assessing confusing naming combinations in P
 Namesake flags confusing identifier naming combinations that are similar in:
 * orthography (word form)
 * phonology (pronunciation)
-* or semantics (meaning).
+* or semantics (meaning)
 
 ## 💡 What is Lexical Similarity in Code?
 Lexical access describes the retrieval of word shape (orthography), pronunciation (phonology), and meaning (semantics) from memory during reading for comprehension. 
