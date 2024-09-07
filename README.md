@@ -9,9 +9,9 @@
 
 Namesake is an open-source tool for assessing confusing naming combinations in Python programs.
 Namesake flags confusing identifier naming combinations that are similar in:
-* orthography (word form)
-* phonology (pronunciation)
-* or semantics (meaning)
+* Orthography (word form)
+* Phonology (pronunciation)
+* or Semantics (meaning)
 
 ## 💡 What is Lexical Similarity in Code?
 Lexical access describes the retrieval of word shape (orthography), pronunciation (phonology), and meaning (semantics) from memory during reading for comprehension. 
